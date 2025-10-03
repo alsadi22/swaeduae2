@@ -1,0 +1,95 @@
+{
+  "name": "SwaedUAE - Volunteer Management Platform",
+  "short_name": "SwaedUAE",
+  "description": "UAE's premier volunteer management platform connecting volunteers with meaningful opportunities",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "orientation": "portrait-primary",
+  "categories": ["social", "productivity", "lifestyle"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "https://public-frontend-cos.metadl.com/mgx/img/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "https://public-frontend-cos.metadl.com/mgx/img/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/api/placeholder/1280/720",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "SwaedUAE Desktop Experience"
+    },
+    {
+      "src": "/api/placeholder/390/844",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "SwaedUAE Mobile Experience"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Find Opportunities",
+      "short_name": "Opportunities",
+      "description": "Browse volunteer opportunities",
+      "url": "/opportunities",
+      "icons": [
+        {
+          "src": "https://public-frontend-cos.metadl.com/mgx/img/favicon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "My Dashboard",
+      "short_name": "Dashboard",
+      "description": "View your volunteer dashboard",
+      "url": "/volunteer/dashboard",
+      "icons": [
+        {
+          "src": "https://public-frontend-cos.metadl.com/mgx/img/favicon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Check In",
+      "short_name": "Check In",
+      "description": "Quick event check-in",
+      "url": "/volunteer/checkin",
+      "icons": [
+        {
+          "src": "https://public-frontend-cos.metadl.com/mgx/img/favicon.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://swaed.ae/manifest.json"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
+}

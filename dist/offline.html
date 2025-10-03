@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - SwaedUAE</title>
+    <link rel="icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #1f2937;
+        }
+
+        .offline-container {
+            text-align: center;
+            max-width: 500px;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+        }
+
+        .offline-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: #fef3c7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+
+        .offline-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #111827;
+        }
+
+        .offline-message {
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .offline-features {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .offline-features h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #374151;
+        }
+
+        .offline-features ul {
+            list-style: none;
+            space-y: 8px;
+        }
+
+        .offline-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        .offline-features li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        .retry-button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-right: 12px;
+        }
+
+        .retry-button:hover {
+            background: #2563eb;
+        }
+
+        .home-button {
+            background: transparent;
+            color: #6b7280;
+            border: 2px solid #d1d5db;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .home-button:hover {
+            border-color: #9ca3af;
+            color: #374151;
+        }
+
+        .connection-status {
+            margin-top: 24px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .connection-offline {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .connection-online {
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #f3f4f6;
+            border-radius: 50%;
+            border-top-color: #3b82f6;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .offline-tips {
+            margin-top: 24px;
+            text-align: left;
+            background: #fffbeb;
+            border: 1px solid #fed7aa;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .offline-tips h4 {
+            color: #92400e;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .offline-tips ul {
+            list-style: disc;
+            margin-left: 16px;
+            color: #a16207;
+            font-size: 13px;
+        }
+
+        .offline-tips li {
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 640px) {
+            .offline-container {
+                padding: 24px;
+                margin: 16px;
+            }
+            
+            .offline-title {
+                font-size: 24px;
+            }
+            
+            .retry-button, .home-button {
+                width: 100%;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">
+            📱
+        </div>
+        
+        <h1 class="offline-title">You're Offline</h1>
+        
+        <p class="offline-message">
+            No internet connection detected. Don't worry - you can still access some SwaedUAE features while offline!
+        </p>
+
+        <div class="offline-features">
+            <h3>Available Offline:</h3>
+            <ul>
+                <li>View your volunteer profile and certificates</li>
+                <li>Browse your registered events</li>
+                <li>Check your volunteer hours history</li>
+                <li>Access downloaded resources and guides</li>
+                <li>Use QR code scanner for event check-in</li>
+            </ul>
+        </div>
+
+        <div>
+            <button class="retry-button" onclick="retryConnection()">
+                <span id="retry-text">Try Again</span>
+            </button>
+            <a href="/" class="home-button">Go to Homepage</a>
+        </div>
+
+        <div id="connection-status" class="connection-status connection-offline">
+            🔴 No internet connection
+        </div>
+
+        <div class="offline-tips">
+            <h4>💡 Tips for better offline experience:</h4>
+            <ul>
+                <li>Download the SwaedUAE mobile app for enhanced offline features</li>
+                <li>Save important event details before going offline</li>
+                <li>Your check-ins will sync automatically when you're back online</li>
+                <li>Enable push notifications to stay updated</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let isRetrying = false;
+
+        function updateConnectionStatus() {
+            const statusElement = document.getElementById('connection-status');
+            
+            if (navigator.onLine) {
+                statusElement.textContent = '🟢 Connection restored!';
+                statusElement.className = 'connection-status connection-online';
+                
+                // Auto-redirect after 2 seconds if online
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
+            } else {
+                statusElement.textContent = '🔴 No internet connection';
+                statusElement.className = 'connection-status connection-offline';
+            }
+        }
+
+        function retryConnection() {
+            if (isRetrying) return;
+            
+            isRetrying = true;
+            const retryButton = document.querySelector('.retry-button');
+            const retryText = document.getElementById('retry-text');
+            
+            retryButton.disabled = true;
+            retryText.innerHTML = '<span class="loading-spinner"></span>Checking...';
+            
+            // Check connection after a brief delay
+            setTimeout(() => {
+                if (navigator.onLine) {
+                    retryText.textContent = 'Connected! Redirecting...';
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000);
+                } else {
+                    retryText.textContent = 'Still offline';
+                    setTimeout(() => {
+                        retryText.textContent = 'Try Again';
+                        retryButton.disabled = false;
+                        isRetrying = false;
+                    }, 2000);
+                }
+                updateConnectionStatus();
+            }, 1500);
+        }
+
+        // Listen for online/offline events
+        window.addEventListener('online', updateConnectionStatus);
+        window.addEventListener('offline', updateConnectionStatus);
+
+        // Check connection status on load
+        updateConnectionStatus();
+
+        // Periodic connection check
+        setInterval(() => {
+            if (!isRetrying) {
+                updateConnectionStatus();
+            }
+        }, 5000);
+
+        // Register service worker if available
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('Service Worker registered successfully');
+                })
+                .catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+
+        // Handle install prompt for PWA
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Show install button if not already installed
+            if (!window.matchMedia('(display-mode: standalone)').matches) {
+                const installTip = document.createElement('div');
+                installTip.className = 'offline-tips';
+                installTip.style.marginTop = '16px';
+                installTip.innerHTML = `
+                    <h4>📲 Install SwaedUAE App</h4>
+                    <p style="font-size: 13px; color: #a16207; margin-top: 8px;">
+                        Install our app for better offline experience and quick access to volunteer features.
+                    </p>
+                    <button onclick="installApp()" style="margin-top: 8px; padding: 8px 16px; background: #f59e0b; color: white; border: none; border-radius: 4px; font-size: 12px; cursor: pointer;">
+                        Install App
+                    </button>
+                `;
+                document.querySelector('.offline-container').appendChild(installTip);
+            }
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    }
+                    deferredPrompt = null;
+                });
+            }
+        }
+    </script>
+</body>
+</html>

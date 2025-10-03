@@ -1,0 +1,41 @@
+User-agent: *
+Allow: /
+
+# Allow all search engines to crawl the site
+Disallow: /admin/
+Disallow: /org/dashboard
+Disallow: /volunteer/dashboard
+Disallow: /api/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://swaed.ae/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /org/dashboard
+Disallow: /volunteer/dashboard
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /org/dashboard
+Disallow: /volunteer/dashboard
+
+# Block access to sensitive areas
+User-agent: *
+Disallow: /admin/
+Disallow: /org/dashboard
+Disallow: /volunteer/dashboard
+Disallow: /api/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*
+Disallow: /search?
+Disallow: /login
+Disallow: /register
